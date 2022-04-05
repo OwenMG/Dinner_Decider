@@ -43,3 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  //modal
+
+  let allergyBtn = document.getElementById("#allergy");
+  let modalBg = document.querySelector('.modal-background');
+  let modal = document.querySelector('.modal')
