@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Decider</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <h1 class="is-size-1"> Dinner Decider</h1>
+    <section>
+        <input id=recipeSearchbar >Have a recipe in mind?</input>
+ </section>
+</div>
+ <section></section>
+ <section>
+    <input id=ingredientsSearchbar >Ingredients</input>
+ </section>
+ <section>
+    <p id="allergiesSearchbar">Any allergies?</p>
+<!--<button id="allergyModal">yes:(</button> -->
+
+    <button class="js-modal-trigger" data-target="modal-js-example">
+      Open JS example modal
+    </button>
+
+     <div id="allergy-modal" class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Allergies</p>
+            <button class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success">Save changes</button>
+            <button class="button">Cancel</button>
+          </footer>
+        </div>
+      </div>
+
+     <div class="columns">
+        <div class="column is-narrow">
+          <div class="box" style="width: 225px;">
+            <p class="title is-5">Narrow column</p>
+            <p class="subtitle">This column will hold the recipe</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <p class="title is-5">Flexible column</p>
+            <p class="subtitle">This column will hold the video</p>
+          </div>
+        </div>
+      </div>
+ </section>
+    <script src="./indexCB.js"></script>
+</body>
+</html>
