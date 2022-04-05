@@ -1,22 +1,21 @@
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
-var recipeName = "beef wellington"
-var ingredients = ["test"];
+var userRecipeInput = "beef wellington"
 
-    fetch(foodAPIUrl+"?query="+recipeName+"&number=1&fillIngredients=true&apiKey=cd67472648f34dd6a33c096e8313fcea")
+    fetch(foodAPIUrl+"?query="+userRecipeInput+"&number=1&fillIngredients=true&apiKey=cd67472648f34dd6a33c096e8313fcea")
     .then(function (response) {
         if(response.ok) {
             console.log(response)
             response.json().then(function(data) {
                 console.log(data);
-                var recipeId = data.results[0].id;
-                console.log(recipeId);
-                
+                var recipeResult = {
+                    title: data.results[0].title,
+                    ingredients: [],
+                };
                 for (i=0; i<data.results[0].missedIngredients.length; i++){
-                    ingredients.push(data.results[0].missedIngredients[i].original);
+                    recipeResult.ingredients.push(data.results[0].missedIngredients[i].original);
                     
                 }
-                console.log(ingredients);
-
+                console.log(recipeResult);
             })
         }
     })
