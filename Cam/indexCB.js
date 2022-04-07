@@ -21,5 +21,5 @@ closeModal.addEventListener('click', () => {
   
 saveAllergies.addEventListener('click', () => {
     modal.classList.remove('is-active');
-
+//add function that takes the checked allergens and influences the returned ingredients
 })
