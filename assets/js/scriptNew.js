@@ -1,6 +1,10 @@
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
-var userRecipeInput = "beef wellington"
 
+
+
+ function getRecipe(){
+    var userRecipeInput =  document.getElementById("searchInput").value; 
+console.log(userRecipeInput);
     fetch(foodAPIUrl+"?query="+userRecipeInput+"&number=1&fillIngredients=true&apiKey=cd67472648f34dd6a33c096e8313fcea")
     .then(function (response) {
         if(response.ok) {
@@ -23,7 +27,7 @@ var userRecipeInput = "beef wellington"
     })
     .catch(function(error) {
         alert('Unable to get data');
-    })
+    }) 
 
 var gatherVideo = function(title) {
         
@@ -37,9 +41,26 @@ response.json().then(function(data) {
             console.log(data);})
         })
 
+
+
+
     }
 
+}
+function getIngredients(){
+
+    var ingInput = document.getElementById("ingredientsSearchbar").value;
+    var  arr = ingInput.split(',');
+    console.log(arr); 
 
 
 
 
+    fetch(foodAPIUrl+ "?query="+arr+"&number=1&fillIngredients=true&apiKey=cd67472648f34dd6a33c096e8313fcea")
+    .then(function (response) {
+        if(response.ok) {
+            console.log(response)
+            response.json().then(function(data) {
+                console.log(data);       })
+            }
+        })}
