@@ -6,6 +6,10 @@ let modal = document.querySelector('.modal')
 let closeModal = document.querySelector("#close-btn")
 let saveAllergies = document.querySelector("#save-allergies")
 
+function applyAllergens() {
+    //allergen options take away from the ingredients search
+}
+
   allergyBtn.addEventListener('click', () => {
       modal.classList.add('is-active');
   });
@@ -21,5 +25,5 @@ closeModal.addEventListener('click', () => {
   
 saveAllergies.addEventListener('click', () => {
     modal.classList.remove('is-active');
-//add function that takes the checked allergens and influences the returned ingredients
+    applyAllergens();
 })

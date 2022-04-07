@@ -10,32 +10,43 @@
 </head>
 
 <body> 
-  <h1 class="is-size-1 py-2 px-2"> Dinner Decider</h1> 
+  <h1 class="is-size-1 py-2 px-2 "> Dinner Decider</h1>
+  <h2 class="is-size-5">Welcome to Dinner Decider! We do all the hard work of deciding on a meal to cook, so you can get back to your busy life. Just follow the steps below and you'll be on your way to making a fabulous meal!!</h2>
 
-  <div class="column is-one-third">
-    <section class="section">
-      <input id=recipeSearchbar class=""> recipe input</input>
-    </section>
+<div class="columns">
+
+  <div class="card column is-4">
+    <div class="card-content">
+        <div class="content">
+          <p>If you already know what you want to make, type in the name here.</p>
+          <input id=recipeSearchbar class=""></input>
+        </div>
+    </div>
   </div>
 
-  <div class="column is-one-third">
-    <section class="py-2 px-2">
-      <input id=ingredientsSearchbar > Ingredients input</input>
-   </section>
+  <div class="card column is-4">
+    <div class="card-content">
+      <div class="content">
+        <p>If you have a fridge full of ingredients, but no idea what to make, you can input a list of what you have and we'll find something that works for you.</p>
+
+        <section class="py-2 px-2">
+        <input id=ingredientsSearchbar ></input>
+        </section>
+      </div>
+    </div>
   </div>
 
-  <div class="column is-one-third">
-    <p id="allergiesSearchbar" ></p>
-     <!--<button id="allergyModal">yes:(</button> -->
-
-    <button id="allergy-modal" class="js-modal-trigger button is-danger" data-target="modal-js-example">Add Allergies</button>
-    <div class="column">
-      <div id="allergy-modal" class="modal">
-          <div class="modal-background"></div>
-          <div class="modal-card">
-            <header class="modal-card-head">
+  <div class="card column is-4">
+    <div class="card-content">
+        <p id="allergiesSearchbar" ></p>
+        <button id="allergy-modal" class="js-modal-trigger button is-danger" data-target="modal-js-example">Add Allergies</button>
+        <div class="column">
+         <div id="allergy-modal" class="modal">
+            <div class="modal-background"></div>
+           <div class="modal-card">
+              <header class="modal-card-head">
               <p class="modal-card-title">Select allergens...</p>
-            </header>
+              </header>
             <section class="modal-card-body ">
               <label class="checkbox" id="allergens" >
                 <input type="checkbox">
@@ -68,10 +79,8 @@
             </footer>
           </div>
         </div>
+      </div>
   </div>
-
-  <section class="section">
-
 </div>
 
      <div class="columns">
@@ -88,7 +97,7 @@
           </div>
         </div>
       </div>
- </section>
     <script src="./indexCB.js"></script>
+
 </body>
 </html>

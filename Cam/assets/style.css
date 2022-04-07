@@ -4,3 +4,29 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+h1 {
+    font-weight: bold;
+    font-family: fantasy;
+    text-align: center;
+    content: 4px;
+    padding: 4px;
+    margin: 2px;
+    background-color: rgba(146, 10, 10, 0.494);
+    color: bisque;
+}
+
+h2 {
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    height: 150px;
+    content: 4px;
+    padding: 4px;
+    margin: 2px;
+    background-color: rgba(146, 10, 10, 0.807);
+    color: rgb(244, 241, 238);
+}
+
+.card {
+}
