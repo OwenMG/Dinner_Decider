@@ -1,6 +1,7 @@
+var playerEl = document.getElementById("player");
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
 // user input variable, manual set for now for testing purposes
-var userRecipeInput = "salmon and sauce";
+var userRecipeInput = "Chicken Tacos";
 var userIngredients = [];
 
 var ingredientQuery = userIngredients.join(",");
@@ -40,8 +41,14 @@ var gatherVideo = function(title) {
                 console.log(response);
                 response.json().then(function (data) {
                     console.log(data);
-                    localStorage.setItem("videoId", data.items[0].id.videoId)
-                    
+                    var videoFrame = document.createElement("iframe");
+                    var videosrc = "http://www.youtube.com/embed/"+data.items[0].id.videoId;
+                    videoFrame.setAttribute("src", videosrc);
+                    videoFrame.setAttribute("width", "420");
+                    videoFrame.setAttribute("height", "315");
+                    videoFrame.setAttribute("frameborder", "0");
+                    playerEl.appendChild(videoFrame);
+
                 })
             }
         })
@@ -52,46 +59,46 @@ var gatherVideo = function(title) {
 
 }
 
-var tag = document.createElement('script');
+// var tag = document.createElement('script');
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+//       tag.src = "https://www.youtube.com/iframe_api";
+//       var firstScriptTag = document.getElementsByTagName('script')[0];
+//       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        console.log(localStorage.getItem("videoId"))
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: localStorage.getItem("videoId"),
-          playerVars: {
-            'playsinline': 1
-          },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
+//       // 3. This function creates an <iframe> (and YouTube player)
+//       //    after the API code downloads.
+//       var player;
+//       function onYouTubeIframeAPIReady() {
+//         console.log(localStorage.getItem("videoId"))
+//         player = new YT.Player('player', {
+//           height: '390',
+//           width: '640',
+//           videoId: localStorage.getItem("videoId"),
+//           playerVars: {
+//             'playsinline': 1
+//           },
+//           events: {
+//             'onReady': onPlayerReady,
+//             'onStateChange': onPlayerStateChange
+//           }
+//         });
+//       }
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+//       // 4. The API will call this function when the video player is ready.
+//       function onPlayerReady(event) {
+//         event.target.playVideo();
+//       }
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-        //   setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
+//       // 5. The API calls this function when the player's state changes.
+//       //    The function indicates that when playing a video (state=1),
+//       //    the player should play for six seconds and then stop.
+//       var done = false;
+//       function onPlayerStateChange(event) {
+//         if (event.data == YT.PlayerState.PLAYING && !done) {
+//         //   setTimeout(stopVideo, 6000);
+//           done = true;
+//         }
+//       }
+//       function stopVideo() {
+//         player.stopVideo();
+//       }
