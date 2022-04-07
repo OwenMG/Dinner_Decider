@@ -4,67 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinner Decider</title>
-    <link rel="stylesheet" href="/Cam/assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Dinner Decider</title>
 </head>
-<body> 
-    <h1 class="is-size-1 py-2 px-2"> Dinner Decider</h1> 
-    
-  <section class="section">
 
+<body> 
+  <h1 class="is-size-1 py-2 px-2"> Dinner Decider</h1> 
+
+  <div class="column is-one-third">
+    <section class="section">
+      <input id=recipeSearchbar class=""> recipe input</input>
+    </section>
+  </div>
+
+  <div class="column is-one-third">
     <section class="py-2 px-2">
-        <input id=recipeSearchbar class=""> recipe input</input>
- </section>
-</div>
- <section>
- <section class="py-2 px-2">
-    <input id=ingredientsSearchbar > Ingredients input</input>
- </section>
+      <input id=ingredientsSearchbar > Ingredients input</input>
+   </section>
+  </div>
+
+  <div class="column is-one-third">
     <p id="allergiesSearchbar" ></p>
      <!--<button id="allergyModal">yes:(</button> -->
 
     <button id="allergy-modal" class="js-modal-trigger button is-danger" data-target="modal-js-example">Add Allergies</button>
-
-     <div id="allergy-modal" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">Select allergens...</p>
-          </header>
-          <section class="modal-card-body ">
-            <label class="checkbox" id="allergens" >
-              <input type="checkbox">
-              Wheat
-              <div class="w-100"></div>
-              <input type="checkbox">
-              Soy
-              <div class="w-100"></div>
-              <input type="checkbox">
-              Dairy
-              <div class="w-100"></div>
-              <input type="checkbox">
-              Shellfish
-              <div class="w-100"></div>
-              <input type="checkbox">
-              Fish
-              <div class="w-100"></div>
-              <input type="checkbox">
-              Peanuts
-              <div class="w-100"></div>
-              <input type="checkbox">
-              Tree Nuts
-              <div class="w-100"></div>
-            </label>
-          </section> <!--make it so the dave changes button closees the modal-->
-
-          <footer class="modal-card-foot">
-            <button id="save-allergies" class="button is-success">Save changes</button>
-            <button id="close-btn" class="button is-danger" aria-label="close">Cancel</button>
-          </footer>
+    <div class="column">
+      <div id="allergy-modal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Select allergens...</p>
+            </header>
+            <section class="modal-card-body ">
+              <label class="checkbox" id="allergens" >
+                <input type="checkbox">
+                Wheat
+                <div class="w-100"></div>
+                <input type="checkbox">
+                Soy
+                <div class="w-100"></div>
+                <input type="checkbox">
+                Dairy
+                <div class="w-100"></div>
+                <input type="checkbox">
+                Shellfish
+                <div class="w-100"></div>
+                <input type="checkbox">
+                Fish
+                <div class="w-100"></div>
+                <input type="checkbox">
+                Peanuts
+                <div class="w-100"></div>
+                <input type="checkbox">
+                Tree Nuts
+                <div class="w-100"></div>
+              </label>
+            </section> <!--make it so the dave changes button closees the modal-->
+  
+            <footer class="modal-card-foot">
+              <button id="save-allergies" class="button is-success">Save changes</button>
+              <button id="close-btn" class="button is-danger" aria-label="close">Cancel</button>
+            </footer>
+          </div>
         </div>
-      </div>
-  </section>
+  </div>
+
+  <section class="section">
+
+</div>
+
      <div class="columns">
         <div class="column is-narrow">
           <div class="box" style="width: 225px;">
