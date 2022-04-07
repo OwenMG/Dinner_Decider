@@ -8,17 +8,28 @@ console.log(userRecipeInput);
     fetch(foodAPIUrl+"?query="+userRecipeInput+"&number=1&fillIngredients=true&apiKey=cd67472648f34dd6a33c096e8313fcea")
     .then(function (response) {
         if(response.ok) {
-            console.log(response)
+            // console.log(response)
             response.json().then(function(data) {
-                console.log(data);
+                // console.log(data);
                 var recipeResult = {
                     title: data.results[0].title,
-                    ingredients: [],
+                    ingredients: [""],
+                }
+                    var recipeResultD = {
+                        title: data.results[0].title,
+                        
                 };
+                console.log(recipeResultD);
+
+                
+                
                 for (i=0; i<data.results[0].missedIngredients.length; i++){
                     recipeResult.ingredients.push(data.results[0].missedIngredients[i].original);
-                    
-                }
+                    }
+            
+
+      document.getElementById("textCheck").textContent = recipeResultD.title + recipeResult.ingredients;
+                
                 console.log(recipeResult);
                 gatherVideo(recipeResult.title);
                 
@@ -47,20 +58,38 @@ response.json().then(function(data) {
     }
 
 }
+
+
+
 function getIngredients(){
 
     var ingInput = document.getElementById("ingredientsSearchbar").value;
     var  arr = ingInput.split(',');
     console.log(arr); 
 
-
-
-
+     
     fetch(foodAPIUrl+ "?query="+arr+"&number=1&fillIngredients=true&apiKey=cd67472648f34dd6a33c096e8313fcea")
     .then(function (response) {
         if(response.ok) {
             console.log(response)
             response.json().then(function(data) {
-                console.log(data);       })
+               
+                var recipeResultTwo = {
+                    title: data.results[0].title,
+                    ingredients: [""],
+                }
+                
+                
+                
+                for (i=0; i<data.results[0].missedIngredients.length; i++){
+                    recipeResultTwo.ingredients.push(data.results[0].missedIngredients[i].original);
+                    }
+                
+                
+                
+                    document.getElementById("textCheck").textContent = recipeResultTwo.title + recipeResultTwo.ingredients;
+                
+                
+                console.log(recipeResultTwo);       })
             }
         })}
