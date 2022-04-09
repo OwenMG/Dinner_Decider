@@ -1,14 +1,7 @@
-let allergyBtn = document.querySelector("#allergy-modal");
-let modalBg = document.querySelector('.modal-background');
-let modal = document.querySelector('.modal')
-let closeModal = document.querySelector("#close-btn")
-let saveAllergies = document.querySelector("#save-allergies")
-let recipeCol = document.querySelector("#recipe-column")
-
 // Url for the food api before the parameters have been added
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
-
+var videoExists = false;
 // This variable links to the player element in the HTML which will contain the embedded youtube video
 var playerEl = document.getElementById("player");
 
@@ -60,13 +53,7 @@ var gatherVideo = function(title) {
                response.json().then(function (data) {
                    console.log(data);
 //  Here we create an element to embed the youtube video in
-                   var videoFrame = document.createElement("iframe");
-                   var videosrc = "http://www.youtube.com/embed/"+data.items[0].id.videoId;
-                   videoFrame.setAttribute("src", videosrc);
-                   videoFrame.setAttribute("width", "420");
-                   videoFrame.setAttribute("height", "315");
-                   videoFrame.setAttribute("frameborder", "0");
-                   playerEl.appendChild(videoFrame);
+                   displayVideo(data);
                 })
             }
                 })
@@ -125,13 +112,7 @@ function getIngredients(){
                                console.log(response);
                                response.json().then(function (data) {
                                    console.log(data);
-                                   var videoFrame = document.createElement("iframe");
-                                   var videosrc = "http://www.youtube.com/embed/"+data.items[0].id.videoId;
-                                   videoFrame.setAttribute("src", videosrc);
-                                   videoFrame.setAttribute("width", "420");
-                                   videoFrame.setAttribute("height", "315");
-                                   videoFrame.setAttribute("frameborder", "0");
-                                   playerEl.appendChild(videoFrame);
+                                   displayVideo(data);
                                 })
                             }
                                 })
@@ -143,29 +124,25 @@ function getIngredients(){
                                 
                             } })}
 // Camerons JS
-allergyBtn.addEventListener('click', () => {
-    modal.classList.add('is-active');
-});
-
-modalBg.addEventListener('click', () => {
-    modal.classList.remove('is-active');
-
-});
-
-closeModal.addEventListener('click', () => {
-  modal.classList.remove('is-active');
-})
-
-saveAllergies.addEventListener('click', () => {
-  modal.classList.remove('is-active');
-  applyAllergens();
-})
-// function applyAllergens(){
-// $(':checkbox').on('change', () => {
-//     let labelValues = $(':checkbox:checked').map((i, el) => ({
-//       value: el.value,
-//       text: el.nextElementSibling.textContent
-//     })).get();
-  
-//     console.log(labelValues);
-//   });}
+function displayVideo(data) {
+    function populateVideo(data) {
+        var videoFrame = document.createElement("iframe");
+        var videosrc = "http://www.youtube.com/embed/"+data.items[0].id.videoId;
+        videoFrame.setAttribute("src", videosrc);
+        videoFrame.setAttribute("width", "420");
+        videoFrame.setAttribute("height", "315");
+        videoFrame.setAttribute("frameborder", "0");
+        playerEl.appendChild(videoFrame);
+        console.log("video loaded");
+    }
+    if (!videoExists) {
+    videoExists=true;
+    populateVideo(data);
+    console.log("first load");
+    }
+    else {
+        playerEl.removeChild(playerEl.firstChild)
+        populateVideo(data);
+        console.log("second load");
+    }
+}
