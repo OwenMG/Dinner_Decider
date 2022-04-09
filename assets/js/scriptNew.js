@@ -1,3 +1,10 @@
+let allergyBtn = document.querySelector("#allergy-modal");
+let modalBg = document.querySelector('.modal-background');
+let modal = document.querySelector('.modal')
+let closeModal = document.querySelector("#close-btn")
+let saveAllergies = document.querySelector("#save-allergies")
+let recipeCol = document.querySelector("#recipe-column")
+
 // Url for the food api before the parameters have been added
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
@@ -136,3 +143,29 @@ function getIngredients(){
                                 
                             } })}
 // Camerons JS
+allergyBtn.addEventListener('click', () => {
+    modal.classList.add('is-active');
+});
+
+modalBg.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+
+});
+
+closeModal.addEventListener('click', () => {
+  modal.classList.remove('is-active');
+})
+
+saveAllergies.addEventListener('click', () => {
+  modal.classList.remove('is-active');
+  applyAllergens();
+})
+function applyAllergens(){
+$(':checkbox').on('change', () => {
+    let labelValues = $(':checkbox:checked').map((i, el) => ({
+      value: el.value,
+      text: el.nextElementSibling.textContent
+    })).get();
+  
+    console.log(labelValues);
+  });}
