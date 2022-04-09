@@ -50,6 +50,13 @@ p {
 
 }
 
+<<<<<<< HEAD
+=======
+#hide {
+    display: none;;
+}
+   
+>>>>>>> c91924f (updated css)
 .checkbox {
     font-weight: bold;
 }
