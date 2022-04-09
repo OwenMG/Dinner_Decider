@@ -3,32 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/Users/niccatania/Desktop/bootcamp/Dinner_Decider/Cam/assets/style.css">
-    <!-- <link href=/Users/niccatania/Desktop/bootcamp/Dinner_Decider/basic.css rel=stylesheet> </link> -->
+    <link rel="stylesheet" href="./Cam/assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinner Decider</title>
 </head>
 <body>
-    <!-- <h1> Dinner Decider</h1>
-    <section>
-        <input id=searchInput >Have a recipe in mind?</input>
-        <button onclick="getRecipe()">Submit!</button>
- </section>
-
- <section>
-    <input id=ingredientsSearchbar >Have some ingredients you want to use in a recipe?</input>
-    <button onclick="getIngredients()">Submit!</button>
-</section> -->
-
-
-
-
-<!-- insert camerons  -->
-
-
-
-
+   
 <header>
     <h1 class="is-size-1 py-2 px-2">Dinner Decider</h1>
     <h2 class="is-size-5 ">Welcome to Dinner Decider! We do all the hard work of deciding on a meal to cook, so you can get back to your busy life. Just follow the steps below and you'll be on your way to making a fabulous meal!!</h2>
@@ -42,7 +23,7 @@
           <p>If you already know what you want to make, type in the name here.</p>
           <section class="has-text-centered">
             <input id="searchInput" class="py-1 px-1 my-1 mx-1"></input>
-            <button onClick= "getRecipe()" class="button is-success">Submit</button>
+            <button onClick= "getRecipe()" class="button is-success" href=#recipe-column >Submit</button>
           </section>
         </div>
       </div>
@@ -55,7 +36,7 @@
 
           <section class="has-text-centered">
           <input id=ingredientsSearchbar class="py-1 px-1 my-1 mx-1" placeholder="ex. eggs, corn, cheese"></input>
-          <button onClick=  "getIngredients()" class="button is-success">Submit</button>
+          <button onClick=  "getIngredients()" class="button is-success" href=#recipe-column>Submit</button>
           </section>
         </div>
       </div>
@@ -99,7 +80,8 @@
                     Tree Nuts
                     <div class="w-100"></div>
                   </label>
-                </section> <!--make it so the dave changes button closees the modal-->
+                </section> 
+                <!--make it so the save changes button closees the modal-->
     
                 <footer class="modal-card-foot">
                   <button onClick="applyAllergens()" id="save-allergies" class="button is-success">Save changes</button>
@@ -115,32 +97,21 @@
   <div class="columns">
         <div class="column is-narrow" >
           <div class="box" style="width: 250px;">
-            <p class="title is-5">Narrow column</p>
-            <p class="subtitle">This column will hold the recipe</p>
+            <p class="title is-5">Recipe, and ingredients</p>
+            <!-- <p class="subtitle">This column will hold the recipe</p> -->
             <div id="recipe-column"></div>
           </div>
         </div>
         <div class="column">
           <div class="box">
-            <p class="title is-5">Flexible column</p>
+            <p class="title is-5">Video response</p>
             <div id="player"></div>
           </div>
         </div>
       </div>
-    <!-- <script src="./indexCB.js"></script> -->
+    
   </div>
 
-  <!-- exit camerons html -->
-
-
-
-
-
-  <!-- textCheck contains the textContent(Recipe, and ingredients) that comes from our spoonacular API -->
-<!-- <div id="textCheck"></div> -->
-
-<!-- Player is where the embedded video goes  -->
-<!-- <div id="player"></div> -->
 
     <script src="./assets/js/scriptNew.js"></script>
 </body>
