@@ -12,7 +12,7 @@
   <body> 
     <header>
       <h1 class="is-size-1 py-2 px-2">Dinner Decider</h1>
-      <h2 class="is-size-5 ">Welcome to Dinner Decider! We do all the hard work of deciding on a meal to cook, so you can get back to your busy life. Just follow the steps below and you'll be on your way to making a fabulous meal!!</h2>
+      <h2 class="is-size-5 ">Welcome to Dinner Decider! The app that does the hard work of deciding on a meal to cook, so you can get back to your busy life. Just follow the steps below and you'll be on your way to making a fabulous meal!</h2>
     </header>
 
     <div id="cards" class="columns">
@@ -20,10 +20,10 @@
       <div class="card column is-one-third" id="card">
         <div class="card-content">
           <div class="content">
-            <p>If you already know what you want to make, type in the name here.</p>
+            <p>Already know what you want to make? type in the name here.</p>
             <section class="has-text-centered">
               <input id="searchInput" class="py-1 px-1 my-1 mx-1"></input>
-              <button class="button is-success" onclick="getRecipe()">Submit</button>
+              <button class="button is-success" id="search" onclick="getRecipe()">Submit</button>
             </section>
           </div>
         </div>
@@ -35,7 +35,7 @@
             <p>If you have a fridge full of ingredients, but no idea what to make, you can input a list of what you have and we'll find something that works for you.</p>
 
             <section class="has-text-centered">
-            <input id=ingredientsSearchbar class="py-1 px-1 my-1 mx-1" placeholder="ex. eggs, corn, cheese"></input>
+            <input id="ingredientsSearchbar" class="py-1 px-1 my-1 mx-1" placeholder="ex. eggs, corn, cheese"></input>
             <button class="button is-success">Submit</button>
             </section>
           </div>
@@ -43,9 +43,8 @@
       </div>
 
       <div class="card column is-one-third" id="card">
-        <p>Here you can choose from a list of allergens to be excluded from your recipe.</p>
-
         <div class="card-content">
+          <p>Here you can choose from a list of allergens to be excluded from your recipe.</p>
           <section class="has-text-centered">
             <button id="allergy-modal" class="js-modal-trigger button is-danger" data-target="modal-js-example">Add Allergies</button>
           </section>
@@ -61,7 +60,7 @@
                       <input type="checkbox">
                       Wheat
                       <div class="w-100"></div>
-                        <input type="checkbox">
+                      <input type="checkbox">
                       Soy
                       <div class="w-100"></div>
                       <input type="checkbox">
@@ -79,8 +78,8 @@
                       <input type="checkbox">
                       Tree Nuts
                       <div class="w-100"></div>
-                      <button id="save-allergies" class="button is-success" type="submit">Save changes</button>
-                      <button id="close-btn" class="button is-danger" aria-label="close">Cancel</button>  
+                      <button id="save-allergies" class="button is-success my-2" type="submit">Save changes</button>
+                      <button id="close-btn" class="button is-danger my-2" aria-label="close">Cancel</button>  
                     </form>
                   </section>
       
@@ -94,16 +93,16 @@
       </div>
     </div>
 
-    <div class="columns">
+        <div class="columns">
           <div class="column is-narrow is-hidden" id="recipe-column">
             <div class="box" style="width: 250px;">
-              <p class="title is-5">Narrow column</p>
-              <p class="subtitle">This column will hold the recipe</p>
+              <p class="title is-5">Ingredients:</p>
+              <p class="subtitle"></p>
             </div>
           </div>
-          <div class="column is-hidden">
+          <div class="column" id="video-column">
             <div class="box">
-              <p class="title is-5">Flexible column</p>
+              <p class="title is-5"></p>
               <div id="player"></div>
             </div>
           </div>
