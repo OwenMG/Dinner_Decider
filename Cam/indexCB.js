@@ -7,6 +7,7 @@ let closeModal = document.querySelector("#close-btn")
 let saveAllergies = document.querySelector("#save-allergies")
 let recipeCol = document.querySelector("#recipe-column")
 
+
 // Url for the food api before the parameters have been added
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
 
@@ -41,7 +42,8 @@ console.log(userRecipeInput);
 // appends text to the DOM that includes our recipe title, and ingredients needed
       document.getElementById("textCheck").textContent = recipeResult.title + recipeResult.ingredients;
                 
-                recipeCol.innerHTML= recipeResult; ////added this instead of console.log()
+                recipeCol.textContent = recipeResult; ////added this instead of console.log()
+                console.log(recipeResult);
                 gatherVideo(recipeResult.title);
                 
             })
@@ -151,6 +153,7 @@ function getIngredients(){
 //     //need variable to hold chosen allergens
 //     //
 // }
+
 
   allergyBtn.addEventListener('click', () => {
       modal.classList.add('is-active');
