@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href=/Users/niccatania/Desktop/bootcamp/Dinner_Decider/basic.css rel=stylesheet> </link>
+    <link rel="stylesheet" href="/Users/niccatania/Desktop/bootcamp/Dinner_Decider/Cam/assets/style.css">
+    <!-- <link href=/Users/niccatania/Desktop/bootcamp/Dinner_Decider/basic.css rel=stylesheet> </link> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinner Decider</title>
 </head>
 <body>
-    <h1> Dinner Decider</h1>
+    <!-- <h1> Dinner Decider</h1>
     <section>
         <input id=searchInput >Have a recipe in mind?</input>
         <button onclick="getRecipe()">Submit!</button>
@@ -18,14 +19,133 @@
  <section>
     <input id=ingredientsSearchbar >Have some ingredients you want to use in a recipe?</input>
     <button onclick="getIngredients()">Submit!</button>
-</section>
+</section> -->
 
-<!-- textCheck contains the textContent(Recipe, and ingredients) that comes from our spoonacular API -->
+
+
+
+<!-- insert camerons  -->
+
+
+
+
+<header>
+    <h1 class="is-size-1 py-2 px-2">Dinner Decider</h1>
+    <h2 class="is-size-5 ">Welcome to Dinner Decider! We do all the hard work of deciding on a meal to cook, so you can get back to your busy life. Just follow the steps below and you'll be on your way to making a fabulous meal!!</h2>
+  </header>
+
+  <div class="columns">
+
+    <div class="card column is-4 ">
+      <div class="card-content">
+        <div class="content">
+          <p>If you already know what you want to make, type in the name here.</p>
+          <section class="has-text-centered">
+            <input id="searchInput" class="py-1 px-1 my-1 mx-1"></input>
+            <button onClick= "getRecipe()" class="button is-success">Submit</button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="card column is-4 ">
+      <div class="card-content">
+        <div class="content">
+          <p>If you have a fridge full of ingredients, but no idea what to make, you can input a list of what you have and we'll find something that works for you.</p>
+
+          <section class="has-text-centered">
+          <input id=ingredientsSearchbar class="py-1 px-1 my-1 mx-1" placeholder="ex. eggs, corn, cheese"></input>
+          <button onClick=  "getIngredients()" class="button is-success">Submit</button>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="card column is-4">
+      <p>Here you can choose from a list of allergens to be excluded from your recipe.</p>
+
+      <div class="card-content">
+        <section class="has-text-centered">
+          <button id="allergy-modal" class="js-modal-trigger button is-danger" data-target="modal-js-example">Add Allergies</button>
+        </section>
+        <div class="column">
+          <div id="allergy-modal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Select allergens...</p>
+              </header>
+                <section class="modal-card-body ">
+                  <label class="checkbox" id="allergens" >
+                    <input type="checkbox">
+                    Wheat
+                    <div class="w-100"></div>
+                      <input type="checkbox">
+                    Soy
+                    <div class="w-100"></div>
+                    <input type="checkbox">
+                    Dairy
+                    <div class="w-100"></div>
+                    <input type="checkbox">
+                    Shellfish
+                    <div class="w-100"></div>
+                    <input type="checkbox">
+                    Fish
+                    <div class="w-100"></div>
+                    <input type="checkbox">
+                    Peanuts
+                    <div class="w-100"></div>
+                    <input type="checkbox">
+                    Tree Nuts
+                    <div class="w-100"></div>
+                  </label>
+                </section> <!--make it so the dave changes button closees the modal-->
+    
+                <footer class="modal-card-foot">
+                  <button id="save-allergies" class="button is-success">Save changes</button>
+                  <button id="close-btn" class="button is-danger" aria-label="close">Cancel</button>
+                </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+        <div class="column is-narrow" >
+          <div class="box" style="width: 250px;">
+            <p class="title is-5">Narrow column</p>
+            <p class="subtitle">This column will hold the recipe</p>
+            <div id="recipe-column"></div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <p class="title is-5">Flexible column</p>
+            <div id="player"></div>
+          </div>
+        </div>
+      </div>
+    <!-- <script src="./indexCB.js"></script> -->
+  </div>
+
+  <!-- exit camerons html -->
+
+
+
+
+
+  <!-- textCheck contains the textContent(Recipe, and ingredients) that comes from our spoonacular API -->
 <div id="textCheck"></div>
 
 <!-- Player is where the embedded video goes  -->
-<div id="player"></div>
+<!-- <div id="player"></div> -->
 
     <script src="./assets/js/scriptNew.js"></script>
 </body>
 </html>
+
+
+
+
