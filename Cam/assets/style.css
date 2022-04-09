@@ -12,7 +12,7 @@ h1 {
     content: 4px;
     padding: 4px;
     margin: 2px;
-    background: linear-gradient(rgba(255, 255, 255, 0.503), rgba(180, 2, 2, 0.850));
+    background: white;
     color: rgb(77, 5, 7);
 }
 
@@ -24,7 +24,7 @@ h2 {
     content: 4px;
     padding: 4px;
     margin: 2px;
-    background: linear-gradient(rgb(180, 2, 2, 0.850), rgba(255, 255, 255, 0.503));
+    background: white;
     color:rgb(77, 5, 7);
 }
 
