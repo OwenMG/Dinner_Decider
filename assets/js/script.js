@@ -141,7 +141,7 @@ var gatherVideo = function(title) {
 function displayVideo(data) {
 function populateVideo(data) {
 var videoFrame = document.createElement("iframe");
-var videosrc = "http://www.youtube.com/embed/"+data.items[0].id.videoId;
+var videosrc = "https://www.youtube.com/embed/"+data.items[0].id.videoId;
 videoFrame.setAttribute("src", videosrc);
 videoFrame.setAttribute("width", "420");
 videoFrame.setAttribute("height", "315");
