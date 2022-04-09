@@ -6,6 +6,7 @@ let saveAllergies = document.querySelector("#save-allergies")
 let recipeCol = document.querySelector("#recipe-column")
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
 var searchHistory = localStorage.getItem("searchHistory");
+var firstLoad = true;
 console.log(searchHistory);
 if (!searchHistory) {
     console.log("no search history, initializing empty array");
@@ -61,10 +62,28 @@ function fetchURL(input) {
 // A for loop to get the ingredients in to our ingredients var( since the ingredients are an array )
                 for (i=0; i<data.results[0].missedIngredients.length; i++){
                     recipeResult.ingredients.push(data.results[0].missedIngredients[i].original);
+                    
                     }
+                    var recipeCheck= (recipeResult.title + recipeResult.ingredients);
+                    var  arrR = recipeCheck.split(',');
+                        console.log("recipe readout: "+arrR);
+                   
+                        var recipeFrame = document.createElement("ul");
+                        if (!firstLoad) {
+                            child=recipeCol.firstElementChild;
+                            recipeCol.removeChild(child);
+                        }
+                        firstLoad = false;
+                        recipeCol.appendChild(recipeFrame);
+                   
+                   for (var i = 0; i < arrR.length; i++) {
+                      
+                       var li= document.createElement("li");
+                       li.innerHTML = arrR[i];
+                       recipeFrame.appendChild(li);
+                   }
             
 // appends text to the DOM that includes our recipe title, and ingredients needed
-      document.getElementById("recipe-column").textContent = recipeResult.title + recipeResult.ingredients;
                 
                 console.log(recipeResult);
                 gatherVideo(recipeResult.title);
@@ -101,7 +120,7 @@ function getIngredients(){
 }
 
 var gatherVideo = function(title) {
-    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBmkn_T3iV6lGMMszsHF7QJNfiD0CLOUj4&type=video&q=How%20To%20Cook%20";
+    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAj-tDvUdEZSNHY_5JpF2139DJzmfsibyE&type=video&q=How%20To%20Cook%20";
    fetch(youtubeApi + title )
        .then(function (response) {
            if (response.ok) {
@@ -118,27 +137,6 @@ var gatherVideo = function(title) {
                     alert("Unable to get data from YouTube")
                 })
 }
-
-// This function inserts title, pulls and embeds youtube video
-var gatherVideo = function(title) {
-    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBmkn_T3iV6lGMMszsHF7QJNfiD0CLOUj4&type=video&q=How%20To%20Cook%20";
-   fetch(youtubeApi + title )
-       .then(function (response) {
-           if (response.ok) {
-               console.log(response);
-               response.json().then(function (data) {
-                   console.log(data);
-                   displayVideo(data);
-                })
-            }
-                })
-
-                .catch(function(error) {
-                    alert("Unable to get data from YouTube")
-                })
-
-                
-            } 
 
 function displayVideo(data) {
 function populateVideo(data) {
