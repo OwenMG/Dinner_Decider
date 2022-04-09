@@ -154,6 +154,25 @@ function getIngredients(){
 //     //
 // }
 
+// function showIng() {
+//     let ingCol = document.getElementById('recipe-column');
+//     let displaySetting = ingCol.style.display;
+//     if (displaySetting == 'block') {
+//         ingCol.style.display = 'none';
+//     } else {
+//         ingCol.style.display = 'block';
+//     }
+// }
+// function showVid() {
+//     let vidCol = document.getElementById('video-column')
+//     let vidDisplaySetting = vidCol.style.display;
+//     if (vidDisplaySetting == 'block') {
+//         vidCol.style.dislay = 'none';
+//     } else {
+//         vidCol.style.display = 'block';
+//     }
+// }
+
 
   allergyBtn.addEventListener('click', () => {
       modal.classList.add('is-active');
@@ -170,5 +189,11 @@ closeModal.addEventListener('click', () => {
   
 saveAllergies.addEventListener('click', () => {
     modal.classList.remove('is-active');
-    applyAllergens();
 })
+
+search.addEventListener('click', () => {
+    column.classList.remove('is-hidden')
+})
+// searchInput.addEventListener('click', () => {
+//     column.classList.remove('is-hidden');
+// })
