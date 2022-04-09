@@ -30,7 +30,7 @@ console.log(userRecipeInput);
                     }
             
 // appends text to the DOM that includes our recipe title, and ingredients needed
-      document.getElementById("textCheck").textContent = recipeResult.title + recipeResult.ingredients;
+      document.getElementById("recipe-column").textContent = recipeResult.title + recipeResult.ingredients;
                 
                 console.log(recipeResult);
                 gatherVideo(recipeResult.title);
@@ -101,7 +101,7 @@ function getIngredients(){
                 
                 
                 
-                    document.getElementById("textCheck").textContent = recipeResultTwo.title + recipeResultTwo.ingredients;
+                    document.getElementById("recipe-column").textContent = recipeResultTwo.title + recipeResultTwo.ingredients;
                 
                     gatherVideo(recipeResultTwo.title); 
                 console.log(recipeResultTwo);  
@@ -135,3 +135,4 @@ function getIngredients(){
                 
                                 
                             } })}
+// Camerons JS
