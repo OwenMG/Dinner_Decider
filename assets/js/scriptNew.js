@@ -43,7 +43,7 @@ function applyAllergens(){
 
 
 console.log(userRecipeInput);
-    fetch(foodAPIUrl+"?query="+userRecipeInput+"&number=1&fillIngredients=true&intolerances="+arrayONE+"&apiKey=cd67472648f34dd6a33c096e8313fcea")
+    fetch(foodAPIUrl+"?query="+userRecipeInput+"&number=1&fillIngredients=true&intolerances="+arrayONE+"&apiKey=d3302cb0f59f4d328c5afeff0420faea ")
     .then(function (response) {
         if(response.ok) {
           
@@ -57,12 +57,30 @@ console.log(userRecipeInput);
                 for (i=0; i<data.results[0].missedIngredients.length; i++){
                     recipeResult.ingredients.push(data.results[0].missedIngredients[i].original);
                     }
-            
+           
+           
+           
+                    // Edited AREA
 // appends text to the DOM that includes our recipe title, and ingredients needed
-      document.getElementById("recipe-column").textContent = recipeResult.title + recipeResult.ingredients;
-                
-                console.log(recipeResult);
-                gatherVideo(recipeResult.title);
+  
+
+var recipeCheck= (recipeResult.title + recipeResult.ingredients);
+ var  arrR = recipeCheck.split(',');
+     console.log(arrR);
+
+     var recipeFrame = document.createElement("ul");
+     recipeCol.appendChild(recipeFrame);
+
+for (var i = 0; i < arrR.length; i++) {
+   
+    var li= document.createElement("li");
+    li.innerHTML = arrR[i];
+    recipeFrame.appendChild(li);
+}
+ 
+    console.log(recipeResult);
+
+    gatherVideo(recipeResult.title);
                 
             })
         }
@@ -107,7 +125,7 @@ function getIngredients(){
      
     // applyAllergens();
     
-    fetch(foodAPIUrl+ "?query="+arr+"&number=1&fillIngredients=true&intolerances="+arrayONE+"&apiKey=cd67472648f34dd6a33c096e8313fcea")
+    fetch(foodAPIUrl+ "?query="+arr+"&number=1&fillIngredients=true&intolerances="+arrayONE+"&apiKey=d3302cb0f59f4d328c5afeff0420faea ")
     .then(function (response) {
         if(response.ok) {
             console.log(response)
@@ -124,10 +142,25 @@ function getIngredients(){
                     recipeResultTwo.ingredients.push(data.results[0].missedIngredients[i].original);
                     }
                 
-                
-                
-                    document.getElementById("recipe-column").textContent = recipeResultTwo.title + recipeResultTwo.ingredients;
-                
+        
+
+
+                    var recipeCheck= (recipeResultTwo.title + recipeResultTwo.ingredients);
+                    var  arrR = recipeCheck.split(',');
+                        console.log(arrR);
+                   
+                        var recipeFrame = document.createElement("ul");
+                        recipeCol.appendChild(recipeFrame);
+                   
+                   for (var i = 0; i < arrR.length; i++) {
+                      
+                       var li= document.createElement("li");
+                       li.innerHTML = arrR[i];
+                       recipeFrame.appendChild(li);
+                   }
+
+
+                // edit
                     gatherVideo(recipeResultTwo.title); 
                 console.log(recipeResultTwo);  
                  })
@@ -158,7 +191,7 @@ var gatherVideo = function(title) {
 function displayVideo(data) {
 function populateVideo(data) {
 var videoFrame = document.createElement("iframe");
-var videosrc = "http://www.youtube.com/embed/"+data.items[0].id.videoId;
+var videosrc = "https://www.youtube.com/embed/"+data.items[0].id.videoId;
 videoFrame.setAttribute("src", videosrc);
 videoFrame.setAttribute("width", "420");
 videoFrame.setAttribute("height", "315");
@@ -194,18 +227,4 @@ closeModal.addEventListener('click', () => {
 
 saveAllergies.addEventListener('click', () => {
   modal.classList.remove('is-active');
-//   applyAllergens();
-})
-
-// $(':checkbox').on('change', () => {
-//     let labelValues = $(':checkbox:checked').map((i, el) => ({
-//       value: el.value,
-//       text: el.nextElementSibling.textContent
-//     })).get();
-  
-//     console.log(labelValues);
-//   });}
-
-// var userRecipeInput =  document.getElementById("searchInput").value; 
-
-// "?query="+arr+"&number=1&fillIngredients=true&intolerances= "+arrayONE+" apiKey=cd67472648f34dd6a33c096e8313fcea"
+});

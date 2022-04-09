@@ -49,3 +49,7 @@ p {
     justify-content: flex-start;
 
 }
+
+#hide {
+    display: none;;
+}
