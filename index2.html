@@ -77,32 +77,32 @@
               </header>
                 <section class="modal-card-body ">
                   <label class="checkbox" id="allergens" >
-                    <input type="checkbox">
+                    <input value= "Wheat" type="checkbox">
                     Wheat
                     <div class="w-100"></div>
-                      <input type="checkbox">
+                      <input value ="Soy" type="checkbox">
                     Soy
                     <div class="w-100"></div>
-                    <input type="checkbox">
+                    <input value ="Dairy" type="checkbox">
                     Dairy
                     <div class="w-100"></div>
-                    <input type="checkbox">
+                    <input value ="Shellfish" type="checkbox">
                     Shellfish
                     <div class="w-100"></div>
-                    <input type="checkbox">
+                    <input value ="Fish" type="checkbox">
                     Fish
                     <div class="w-100"></div>
-                    <input type="checkbox">
+                    <input value="Peanuts" type="checkbox">
                     Peanuts
                     <div class="w-100"></div>
-                    <input type="checkbox">
+                    <input value= "Tree Nut" type="checkbox">
                     Tree Nuts
                     <div class="w-100"></div>
                   </label>
                 </section> <!--make it so the dave changes button closees the modal-->
     
                 <footer class="modal-card-foot">
-                  <button id="save-allergies" class="button is-success">Save changes</button>
+                  <button onClick="applyAllergens()" id="save-allergies" class="button is-success">Save changes</button>
                   <button id="close-btn" class="button is-danger" aria-label="close">Cancel</button>
                 </footer>
             </div>
@@ -137,7 +137,7 @@
 
 
   <!-- textCheck contains the textContent(Recipe, and ingredients) that comes from our spoonacular API -->
-<div id="textCheck"></div>
+<!-- <div id="textCheck"></div> -->
 
 <!-- Player is where the embedded video goes  -->
 <!-- <div id="player"></div> -->
