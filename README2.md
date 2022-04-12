@@ -16,9 +16,9 @@ https://owenmg.github.io/Dinner_Decider/
 .Bulma
  
 # Screenshots
-![./assets/gif.gif](Project gif)
+![./assets/images/gif.gif](Project gif)
 
-![./assets/DDscreenshot.png] (Project screenshot)
+![./assets/images/DDscreenshot.png] (Project screenshot)
  
 # Usage
 (license, or how we want to share this code)
