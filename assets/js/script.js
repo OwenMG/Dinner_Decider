@@ -99,11 +99,12 @@ function fetchURL(input) {
 function getRecipe(){
 
 // Links to the first search bar in the HTML file
-    var userRecipeInput =  document.getElementById("searchInput").value; 
+    var userRecipeInput =  document.getElementById("searchInput").value;
     localStorage.setItem("searchHistory", userRecipeInput);
 
     console.log(userRecipeInput);
     fetchURL(userRecipeInput);
+    document.getElementById("searchInput").value = "";
 }
 
 function getIngredients(){
@@ -117,6 +118,7 @@ function getIngredients(){
     // applyAllergens();
     
     fetchURL(arr);
+    document.getElementById("ingredientsSearchbar").value = "";
 }
 
 var gatherVideo = function(title) {
