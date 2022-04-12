@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/Users/niccatania/Desktop/bootcamp/Dinner_Decider/basic.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinner Decider</title>
@@ -15,21 +15,21 @@
     <h2 class="is-size-5 ">Welcome to Dinner Decider! We do all the hard work of deciding on a meal to cook, so you can get back to your busy life. Just follow the steps below and you'll be on your way to making a fabulous meal!!</h2>
   </header>
 
-  <div class="columns">
+  <div id = "cards"class="columns">
 
-    <div class="card column is-4 ">
+    <div class="card column is-one-third "id="card">
       <div class="card-content">
         <div class="content">
           <p>If you already know what you want to make, type in the name here.</p>
           <section class="has-text-centered">
             <input id="searchInput" class="py-1 px-1 my-1 mx-1"></input>
-            <button onClick= "getRecipe(); removeHide();" class="button is-success" href=#recipe-column >Submit</button>
+            <button onClick= "getRecipe()" class="button is-success" href=#recipe-column >Submit</button>
           </section>
         </div>
       </div>
     </div>
 
-    <div class="card column is-4 ">
+    <div class="card column is-one-third "id="card">
       <div class="card-content">
         <div class="content">
           <p>If you have a fridge full of ingredients, but no idea what to make, you can input a list of what you have and we'll find something that works for you.</p>
@@ -42,10 +42,10 @@
       </div>
     </div>
 
-    <div class="card column is-4">
-      <p>Here you can choose from a list of allergens to be excluded from your recipe.</p>
+    <div class="card column is-one-third"id="card">
 
       <div class="card-content">
+        <p>Here you can choose from a list of allergens to be excluded from your recipe.</p>
         <section class="has-text-centered">
           <button id="allergy-modal" class="js-modal-trigger button is-danger" data-target="modal-js-example">Add Allergies</button>
         </section>
@@ -102,22 +102,19 @@
             <div id="recipe-column"></div>
           </div>
         </div>
-        <div id=vibes class=hide>
-        <div class="column"></div>
-          <div class="box ">
-            <p class="title is-5 ">Video response</p>
-            <div id="player" ></div>
+        <div class="column">
+          <div class="box">
+            <p class="title is-5">Video response</p>
+            <div id="player"></div>
           </div>
         </div>
       </div>
-    </div>
+    
   </div>
 
 
-    <script src="./assets/js/scriptNew.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
-
-
 
 

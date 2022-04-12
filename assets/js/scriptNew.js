@@ -4,6 +4,7 @@ let modal = document.querySelector('.modal')
 let closeModal = document.querySelector("#close-btn")
 let saveAllergies = document.querySelector("#save-allergies")
 let recipeCol = document.querySelector("#recipe-column")
+// recipeCol= ""
 
 
 var videoExists = false;
@@ -38,6 +39,7 @@ function applyAllergens(){
 // This function will fetch spoonacular API
  function getRecipe(){
 
+    
 // Links to the first search bar in the HTML file
     var userRecipeInput =  document.getElementById("searchInput").value; 
 
@@ -87,12 +89,14 @@ for (var i = 0; i < arrR.length; i++) {
     })
     .catch(function(error) {
         alert('Unable to get data');
+        
     }) 
-
+if (recipeCol===null) ;
+else recipeCol=""
 // This function and fetch call adds the title of our recipe we got into the youtube APIs url. It then searches for a youtube video based on our recipe. 
 
 var gatherVideo = function(title) {
-    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBmkn_T3iV6lGMMszsHF7QJNfiD0CLOUj4&type=video&q=How%20To%20Cook%20";
+    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAj-tDvUdEZSNHY_5JpF2139DJzmfsibyE&type=video&q=How%20To%20Cook%20";
    fetch(youtubeApi + title )
        .then(function (response) {
            if (response.ok) {
@@ -169,7 +173,7 @@ function getIngredients(){
 
 // This function works just like the original gatherVideo function, inserts title, pulls and embeds youtube video
 var gatherVideo = function(title) {
-    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBmkn_T3iV6lGMMszsHF7QJNfiD0CLOUj4&type=video&q=How%20To%20Cook%20";
+    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAj-tDvUdEZSNHY_5JpF2139DJzmfsibyE&type=video&q=How%20To%20Cook%20";
    fetch(youtubeApi + title )
        .then(function (response) {
            if (response.ok) {
@@ -228,3 +232,7 @@ closeModal.addEventListener('click', () => {
 saveAllergies.addEventListener('click', () => {
   modal.classList.remove('is-active');
 });
+
+function removeHide(){
+    document.querySelector("#vibes").classList.remove("hide");
+    }

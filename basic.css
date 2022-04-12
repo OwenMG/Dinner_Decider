@@ -1,95 +1,70 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+body {
+  background-image: url("./images/283-2833111_cute-food-wallpapers-cute-wallpaper-desktop-food.jpg");
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
 }
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #5372F0;
+
+h1 {
+  font-weight: bold;
+  font-family: fantasy;
+  text-align: center;
+  content: 4px;
+  padding: 4px;
+  margin: 2px;
+  background: linear-gradient(rgb(104, 46, 46), rgba(255, 255, 255, 0.883));
+  color: rgb(77, 5, 7);
 }
-::selection{
-  color: #fff;
- 
+
+h2 {
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 135px;
+  content: 4px;
+  padding: 4px;
+  margin: 2px;
+  background: linear-gradient(rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.398));
+  color:rgb(77, 5, 7);
 }
-.wrapper{
-  width: 496px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 18px 25px 20px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.06);
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
-.wrapper :where(.title, li, li i, .details){
-  display: flex;
-  align-items: center;
+
+.modal {
+  background-image: url("./images/283-2833111_cute-food-wallpapers-cute-wallpaper-desktop-food.jpg");
 }
-.title img{
-  max-width: 21px;
-}
-.title h2{
-  font-size: 21px;
-  font-weight: 600;
-  margin-left: 8px;
-}
-.wrapper .content{
-  margin: 10px 0;
-}
-.content p{
-  font-size: 15px;
-}
-.content ul{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 7px;
-  margin: 12px 0;
-  border-radius: 5px;
-  border: 1px solid #a6a6a6;
-}
-.content ul  li{
-  color: #333;
-  margin: 4px 3px;
-  list-style: none;
-  border-radius: 5px;
-  background: #F2F2F2;
-  padding: 5px 8px 5px 10px;
-  border: 1px solid #e3e1e1;
-}
-.content ul li i{
-  height: 20px;
-  width: 20px;
-  color: #808080;
-  margin-left: 8px;
-  font-size: 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  background: #dfdfdf;
-  justify-content: center;
-}
-.content ul input{
-  flex: 1;
+
+#card {
   padding: 5px;
-  border: none;
-  outline: none;
-  font-size: 16px;
+  margin: 4px;
+  border-radius: 10px;
+  background: linear-gradient(rgb(245, 240, 240), rgba(255, 255, 255, 0.63));
 }
-.wrapper .details{
-  justify-content: space-between;
+
+#cards {
+  display: flex;
+  justify-content: flex-start;
+
 }
-.details button{
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 9px 15px;
-  border-radius: 5px;
-  background: #5372F0;
-  transition: background 0.3s ease;
+
+
+.checkbox {
+  font-weight: bold;
 }
-.details button:hover{
-  background: #2c52ed;
+/* 
+.recipe-column {
+  visibility: hidden;
+}
+
+.video-column {
+  display: none;
+
 } */
+
+
+.hide{
+  visibility:hidden;
+}
