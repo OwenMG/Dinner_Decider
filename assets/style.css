@@ -37,29 +37,6 @@ p {
     background-image: url("./images/283-2833111_cute-food-wallpapers-cute-wallpaper-desktop-food.jpg");
 }
 
-#card {
-    padding: 5px;
-    margin: 4px;
-    border-radius: 10px;
-    background: linear-gradient(rgb(245, 240, 240), rgba(255, 255, 255, 0.63));
-}
-
-#cards {
-    display: flex;
-    justify-content: flex-start;
-
-}
-
-
 .checkbox {
     font-weight: bold;
-}
-
-.recipe-column {
-    visibility: hidden;
-}
-
-.video-column {
-    display: none;
-
 }
