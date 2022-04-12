@@ -104,6 +104,7 @@ function getRecipe(){
 
     console.log(userRecipeInput);
     fetchURL(userRecipeInput);
+    document.getElementById("searchInput").value = "";
 }
 
 function getIngredients(){
@@ -117,6 +118,8 @@ function getIngredients(){
     // applyAllergens();
     
     fetchURL(arr);
+    document.getElementById("ingredientsSearchbar").value = "";
+
 }
 
 var gatherVideo = function(title) {
