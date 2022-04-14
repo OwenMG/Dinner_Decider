@@ -1,0 +1,47 @@
+body {
+    background-image: url("./images/283-2833111_cute-food-wallpapers-cute-wallpaper-desktop-food.jpg");
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+h1 {
+    font-weight: bold;
+    font-family: fantasy;
+    text-align: center;
+    content: 4px;
+    padding: 4px;
+    margin: 2px;
+    background: linear-gradient(rgb(104, 46, 46), rgba(255, 255, 255, 0.883));
+    color: rgb(77, 5, 7);
+}
+
+h2 {
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 135px;
+    content: 4px;
+    padding: 4px;
+    margin: 2px;
+    background: linear-gradient(rgba(255, 255, 255, 0.849), rgba(255, 255, 255, 0.398));
+    color:rgb(77, 5, 7);
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.modal {
+    background-image: url("./images/283-2833111_cute-food-wallpapers-cute-wallpaper-desktop-food.jpg");
+}
+/* 
+
+#search-output {
+    display: none;
+}  */
+
+.checkbox {
+    font-weight: bold;
+}

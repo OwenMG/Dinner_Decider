@@ -50,6 +50,9 @@ p {
 
 }
 
+#search-input {
+    display: none;
+}
 
 .checkbox {
     font-weight: bold;

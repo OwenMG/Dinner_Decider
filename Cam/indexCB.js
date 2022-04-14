@@ -154,6 +154,15 @@ function getIngredients(){
 //     //
 // }
 
+function showInput() {
+    let output = document.getElementById('search-output');
+    if (output.style.display === "none") {
+        output.style.display = "block";
+    } else {
+        output.style.display = "none"
+    }
+}
+
 // function showIng() {
 //     let ingCol = document.getElementById('recipe-column');
 //     let displaySetting = ingCol.style.display;

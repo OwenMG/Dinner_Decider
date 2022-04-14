@@ -4,6 +4,11 @@ let modal = document.querySelector('.modal')
 let closeModal = document.querySelector("#close-btn")
 let saveAllergies = document.querySelector("#save-allergies")
 let recipeCol = document.querySelector("#recipe-column")
+<<<<<<< HEAD:assets/assets/scriptNew.js
+// recipeCol= ""
+
+
+=======
 var foodAPIUrl = "https://api.spoonacular.com/recipes/complexSearch";
 var searchHistory = localStorage.getItem("searchHistory");
 var firstLoad = true;
@@ -23,6 +28,7 @@ else {
         fetchURL(searchHistory);
     }
 }
+>>>>>>> 033a7d9ff6cfd6460c6af0293ad73bf881146401:MAIN/SCRIPT.js
 var videoExists = false;
  var arrayONE = []
 // Url for the food api before the parameters have been added
@@ -47,9 +53,23 @@ function applyAllergens(){
     }
 }
 
+<<<<<<< HEAD:assets/assets/scriptNew.js
+
+// This function will fetch spoonacular API
+ function getRecipe(){
+
+    
+// Links to the first search bar in the HTML file
+    var userRecipeInput =  document.getElementById("searchInput").value; 
+
+
+console.log(userRecipeInput);
+    fetch(foodAPIUrl+"?query="+userRecipeInput+"&number=1&fillIngredients=true&intolerances="+arrayONE+"&apiKey=d3302cb0f59f4d328c5afeff0420faea ")
+=======
 function fetchURL(input) {
     applyAllergens();
     fetch(foodAPIUrl+"?query="+input+"&number=1&fillIngredients=true&intolerances="+arrayONE+"&apiKey=d3302cb0f59f4d328c5afeff0420faea")
+>>>>>>> 033a7d9ff6cfd6460c6af0293ad73bf881146401:MAIN/SCRIPT.js
     .then(function (response) {
         if(response.ok) {
           
@@ -95,6 +115,33 @@ function fetchURL(input) {
         alert('Unable to get data');
         
     }) 
+<<<<<<< HEAD:assets/assets/scriptNew.js
+if (recipeCol===null) ;
+else recipeCol=""
+// This function and fetch call adds the title of our recipe we got into the youtube APIs url. It then searches for a youtube video based on our recipe. 
+
+var gatherVideo = function(title) {
+    var youtubeApi = "https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyAj-tDvUdEZSNHY_5JpF2139DJzmfsibyE&type=video&q=How%20To%20Cook%20";
+   fetch(youtubeApi + title )
+       .then(function (response) {
+           if (response.ok) {
+               console.log(response);
+               response.json().then(function (data) {
+                   console.log(data);
+//  Here we create an element to embed the youtube video in
+                  displayVideo(data);
+                })
+            }
+                })
+
+                .catch(function(error) {
+                    alert("Unable to get data from YouTube")
+                })
+
+                
+            }
+        
+=======
 }
 // This function will fetch spoonacular API
 function getRecipe(){
@@ -102,6 +149,7 @@ function getRecipe(){
 // Links to the first search bar in the HTML file
     var userRecipeInput =  document.getElementById("searchInput").value; 
     localStorage.setItem("searchHistory", userRecipeInput);
+>>>>>>> 033a7d9ff6cfd6460c6af0293ad73bf881146401:MAIN/SCRIPT.js
 
     console.log(userRecipeInput);
     fetchURL(userRecipeInput);
@@ -187,6 +235,13 @@ closeModal.addEventListener('click', () => {
 
 saveAllergies.addEventListener('click', () => {
   modal.classList.remove('is-active');
+<<<<<<< HEAD:assets/assets/scriptNew.js
+});
+
+function removeHide(){
+    document.querySelector("#vibes").classList.remove("hide");
+    }
+=======
 //   applyAllergens();
 })
 
@@ -202,3 +257,4 @@ saveAllergies.addEventListener('click', () => {
 // var userRecipeInput =  document.getElementById("searchInput").value; 
 
 // "?query="+arr+"&number=1&fillIngredients=true&intolerances= "+arrayONE+" apiKey=cd67472648f34dd6a33c096e8313fcea"
+>>>>>>> 033a7d9ff6cfd6460c6af0293ad73bf881146401:MAIN/SCRIPT.js
