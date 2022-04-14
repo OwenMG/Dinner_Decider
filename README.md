@@ -21,7 +21,10 @@ Cameron Buss - https://github.com/camnb97
 Nic Catania - https://github.com/Niccatania
  
 # Screenshots
-![project gif](./assets/images/DD.gif)(Project gif)
+![project gif](./assets/images/DD.gif)
+
+![project screenshot](./assets/images/DDscreenshot.png)
+
 
  
 # Usage
