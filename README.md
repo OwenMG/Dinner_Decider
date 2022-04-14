@@ -21,9 +21,8 @@ Cameron Buss - https://github.com/camnb97
 Nic Catania - https://github.com/Niccatania
  
 # Screenshots
-![project gif](./assets/images/Dinner Decider.gif)(Project gif)
+![project gif](./assets/images/DD.gif)(Project gif)
 
-![Project screenshot](./assets/images/DDscreenshot.png) 
  
 # Usage
 If you would like to add or edit this project please contact the Contributors
